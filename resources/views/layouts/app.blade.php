@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Cirujano General en Veracruz / Dr. José Manuel Luna Vázquez</title>
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="{{ asset('css/main.css') }}">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:200,200i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
 <!-- Facebook Pixel Code -->
 <script>
@@ -33,7 +33,7 @@
 <!--------------------- ABRE HEADER --------------------->
 <header class="header-principal">
 	<div class="wrapt">
-		<div class="logo"><img src="img/logo-cgq.png" alt=""></div>
+		<div class="logo"><img src="{{ asset('img/logo-cgq.png') }}" alt=""></div>
 		<section class="btn-menu">
 			<div class="barrita"></div>
 			<div class="barrita"></div>
@@ -117,8 +117,8 @@
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous">  
 </script>	
- <script src="js/script.js"></script>
- <script src="js/validacion.js"></script>
+ <script src="{{ asset('js/script.js') }}"></script>
+ <script src="{{ asset('js/validacion.js') }}"></script>
 <script>
   $('.toggle').click(function(e) {
   	e.preventDefault();

@@ -11,7 +11,7 @@
 				<a href=""><div class="agenda">¡Agenda tu cita hoy!</div></a>
 			</div>
 		</div>
-		<figure><img src="img/dr-luna-3.jpg" alt=""></figure>
+		<figure><img src="{{ asset('img/dr-luna-3.jpg') }}" alt=""></figure>
 	</section>
 	<!--------------------- CIERRA SLIDE --------------------->
 
@@ -21,7 +21,7 @@
 	<div class="fondo-luna"></div>
 	<section class="dr-luna-perfil">
 		<div class="wrapt">
-			<figure><img src="img/dr-luna-perfil.jpg" alt=""></figure>
+			<figure><img src="{{ asset('img/dr-luna-perfil.jpg') }}" alt=""></figure>
 			<div>
 				<h2>“Con mi continua actualización, ofrezco a mis pacientes la calidad médica  y de vida, que ellos merecen”</h2>
 				<ul>
@@ -113,7 +113,7 @@
 			</form>
 			<!--------------------- CIERRA SEGUNDO FORMULARIO --------------------->
 			<figure class="img-agenda-cita">
-				<img src="img/agenda-cita.png" alt="">
+				<img src="{{ asset('img/agenda-cita.png') }}" alt="">
 			</figure>
 			<div class="preguntas-frecuentes">
 				<h2>Preguntas frecuentes</h2>
