@@ -57,7 +57,7 @@ class FrontController extends Controller
     public function cirugia_acalasia() { return view('cirugia_general.cirugia_acalasia'); }
     public function cirugia_glandula_tiroides() { return view('cirugia_general.cirugia_glandula_tiroides'); }
     public function colecistectomia() { return view('cirugia_general.colecistectomia'); }
-    public function cirujia_anti_reflujo() { return view('cirugia_general.cirugia_anti_reflujo'); }
+    public function cirujia_antirreflujo() { return view('cirugia_general.cirugia_antirreflujo'); }
     public function deteccion_oportuna() { return view('cirugia_general.deteccion_oportuna'); }
     public function drenaje_tratamiento_infecciones() { return view('cirugia_general.drenaje_tratamiento_infecciones'); }
     public function exploracion_vias_biliares() { return view('cirugia_general.exploracion_vias_biliares'); }
