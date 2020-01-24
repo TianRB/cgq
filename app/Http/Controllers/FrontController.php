@@ -3,16 +3,44 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Post;
+use App\Category;
 use App\Http\Requests;
 
 class FrontController extends Controller
 {
+    public function blog() {
+        return view('blog', [
+            'posts' => Post::all(),
+            'categories' => Category::all()
+        ]);
+    }
+
+    public function blog_search(Request $request) {
+        $search = $request->search;
+        return view('blog', [
+            'posts' => Post::Title($search)->get(),
+            'categories' => Category::all()
+        ]);
+    }
+
+    public function blog_category($categorySlug) {
+        $cat = Category::where('slug', $categorySlug)->first();
+        return view('blog', [
+            'posts' => Post::where('category_id', $cat->id)->get(),
+            'categories' => Category::all()
+        ]);
+    }
+
+    public function nota($title) {
+        return view('nota', [
+            'post' => Post::where('title', $title)->first(),
+            'related' => Post::all()->shuffle()->take(3)
+        ]);
+    }
     public function index() { return view('welcome'); }
-    public function blog() { return view('blog'); }
     public function contacto() { return view('contacto'); }
     public function gracias() { return view('gracias'); }
-    public function nota() { return view('nota'); }
     
     public function enfermedades_bazo() { return view('padecimientos_clinicos.enfermedades_bazo'); }
     public function enfermedades_colonicas() { return view('padecimientos_clinicos.enfermedades_colonicas'); }

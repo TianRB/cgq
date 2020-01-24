@@ -12,4 +12,9 @@ class Post extends Model
 	{
 		return $this->belongsTo('App\Category');
 	}
+	public function scopeTitle($query, $title)
+	{
+			return $query->where("title","like","%$title%");
+	}
+
 }

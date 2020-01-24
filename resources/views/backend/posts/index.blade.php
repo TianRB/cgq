@@ -11,16 +11,11 @@
 
       <div class="grupo-filtro-notas">
         <span class="triangulito"></span>
-        <select class="browser-default" id="puesto" name="puesto">
+        <select class="browser-default" id="puesto" name="categoria">
           <option value="" disabled selected>Categoría</option>
-          <option value="Editor" class="editor">Nuevos productos</option>
-          <option value="Reportero">Seguridad vial</option>
-          <option value="Jefe de Redacción">Protección general</option>
-          <option value="Jefe de Redacción">Protección visual</option>
-          <option value="Jefe de Redacción">Protección para manos</option>
-          <option value="Jefe de Redacción">Protección auditiva</option>
-          <option value="Jefe de Redacción">Protección para lluvias</option>
-          <option value="Jefe de Redacción">Protección respiratoria</option>
+          @foreach($categories as $c)
+            <option value="{{ $c->slug }}">{{ $c->name }}</option>
+          @endforeach
         </select>
       </div>
 

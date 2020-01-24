@@ -11,13 +11,16 @@ use App\Http\Middleware\Authenticate;
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::auth();
 
 // FRONTEND
 Route::get('/', 'FrontController@index');
 Route::get('/blog', 'FrontController@blog');
+Route::post('/blog', 'FrontController@blog_search');
+Route::get('/blog/{categoriaSlug}', 'FrontController@blog_category');
 Route::get('/contacto', 'FrontController@contacto');
 Route::get('/gracias', 'FrontController@gracias');
-Route::get('/nota', 'FrontController@nota');
+Route::get('/nota/{postSlug}', 'FrontController@nota');
 // Padecimientos clinicos
 Route::get('/padecimientos-clinicos/enfermedades-bazo', 'FrontController@enfermedades_bazo');
 Route::get('/padecimientos-clinicos/enfermedades-colonicas', 'FrontController@enfermedades_colonicas');
@@ -49,7 +52,6 @@ Route::get('/cirugia-general/tratamiento-ulceras', 'FrontController@tratamiento_
 Route::get('/cirugia-general/trauma-abdominal', 'FrontController@trauma_abdominal');
 
 //BACKEND
-Route::auth();
 
 Route::get('/home', function () {
     return view('backend.posts.index');
