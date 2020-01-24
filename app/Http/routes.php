@@ -1,4 +1,5 @@
 <?php
+use App\Http\Middleware\Authenticate;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,12 +12,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// FRONTEND
+Route::get('/', 'FrontController@index');
 
+//BACKEND
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
-Route::resource('/categories', 'CategoryController');
-Route::resource('/posts', 'PostController');
+Route::get('/home', function () {
+    return view('backend.posts.index');
+})->middleware(Authenticate::class);
+
+Route::resource('/back/categories', 'CategoryController');
+Route::resource('/back/posts', 'PostController');

@@ -36,26 +36,27 @@
 <!-- ******************************** MENÚ IZQUIERDO ******************************** --> 
 		<div class="menu">
 			<nav class="nav">
-				<section class="seccion">
+
+				<!--<section class="seccion">
 					<h4><span class="icon-user"></span> Usuarios <span class="icon-flecha-abajo"></span> </h4>
 					<ul class="bloque">
 						<li>
-							<a href="http://demo.topotv.com/back/create-user.html">Crear usuario</a>
+							<a href="{{ url('/back/create-user') }}">Crear usuario</a>
 						</li>
 						<li>
-							<a href="http://demo.topotv.com/back/view-users.html">Ver usuarios</a>
+							<a href="{{ url('/back/view-users') }}">Ver usuarios</a>
 						</li>
 					</ul>
-				</section>
+				</section>-->
 				
 				<section class="seccion">
 					<h4><span class="icon-articulos"></span> Artículos <span class="icon-flecha-abajo"></span></h4>
 					<ul class="bloque">
 						<li>
-							<a href="http://demo.topotv.com/back/create-article.html">Crear artículo</a>
+							<a href="{{ url('/back/posts/create') }}">Crear artículo</a>
 						</li>
 						<li>
-							<a href="http://demo.topotv.com/back/view-articles.html">Ver artículos existentes</a>
+							<a href="{{ url('/back/posts') }}">Ver artículos existentes</a>
 						</li>
 					</ul>
 				</section>
@@ -63,10 +64,10 @@
 					<h4><span class="icon-categorias"></span> Categorías <span class="icon-flecha-abajo"></span></h4>
 					<ul class="bloque">
 						<li>
-							<a href="">Crear categoría</a>
+							<a href="{{ url('/back/categories/create') }}">Crear categoría</a>
 						</li>
 						<li>
-							<a href="http://demo.topotv.com/back/view-categories.html">Ver categorías existentes</a>
+							<a href="{{ url('/back/categories') }}">Ver categorías existentes</a>
 						</li>
 					</ul>
 				</section>

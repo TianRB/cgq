@@ -1,42 +1,35 @@
-@extends('backend.layouts.app')
+@extends('layouts.back')
 @section('content')
-<section class="py-5 mt-5">
-	<div class="row justify-content-center p-5">
-		<div class="col">
-			<h2 class="mont bold text-muted">Categorías</h2>
-		</div>
-	</div>
-	<div class="row">
-		@foreach ($categories as $c)
-		<div class="col-12 col-sm-6 col-md-4 py-4">
-			<div class="card border-0">
-				<div class="card-header bg-white">
-					<h4 class="card-title mont text-center">{{ $c->display_name }}</h4>
-				</div>
-				<div class="card-body text-center">
-					<i class="{{ $c->icon }} fa-5x"></i>
+<div class="area-principal">
 
-					<p class="card-text py-3">{{ $c->description }}</p>
-				</div>
-				<div class="card-footer d-flex flex-row justify-content-around bg-white">
-					<a href="{{ route('categories.edit', $c->id) }}" class="btn btn-info">Editar</a>
-					<a href="{{ route('categories.show', $c->id) }}" class="btn bg-azul text-white">Ver</a>
+  <!-- ******************************** ESTÁ SECCIÓN MUESTRA LOS ARTÍCULOS EXISTENTES ******************************** -->
+  <div class="area-principal-articulos">
+    @foreach($categories as $c)
+    <div class="sombra-1 modulo-largo lista-articulos">
+      <!-- Articulo -->
+      <article>
+        <section>
+          <div class="texto-card-articulos">
+            <h2>{{ $c->name }}</h2><!-- Título del artículo -->
+          </div>
 
-					<form action="{{ route('categories.destroy', ['id' => $c->id]) }}" method="POST" class="no-margin">
-						{{ csrf_field() }}
-						<input type="hidden" name="_method" value="DELETE" />
-						<button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-					</form>
-				</div>
-			</div>
-		</div>
-		@endforeach
-	</div>
-
-	<div class="row justify-content-center">
-		<div class="col-4 text-center">
-			<a href="{{route('categories.create')}}" class="btn btn-lg bg-azul text-white rounded"><i class="fa fa-plus"></i>&nbsp;Agregar</a>
-		</div>
-	</div>
-</section>
+          <!-- BOTONES -->
+          <div class="btns-notas">
+            <form action="{{ route('back.categories.destroy', ['id' => $c->id]) }}" method="POST" class="no-margin">
+              {{ csrf_field() }}
+              <input type="hidden" name="_method" value="DELETE" />
+              <button class="btn btn-rectangle btn-raised btn-basura">
+                <div class="ripple-container">
+                  <span class="ripple-effect"></span>
+                </div>
+                <span class="icon-borrar"></span>
+              </button>
+            </form>
+          </div>
+        </section>
+      </article>
+    </div>
+    @endforeach
+  </div>
+</div>
 @endsection

@@ -26,6 +26,11 @@ class CreateTables extends Migration
 			$table->foreign('category_id')->references('id')->on('categorias')->onDelete('cascade');
             $table->timestamps();
         });
+        DB::table('categorias')->insert([
+			'name' => 'Sin Definir',
+			'slug' => 'sin-definir'
+		]);
+
     }
 
     /**
@@ -35,7 +40,7 @@ class CreateTables extends Migration
      */
     public function down()
     {
-        Schema::drop('categorias');
         Schema::drop('posts');
+        Schema::drop('categorias');
     }
 }

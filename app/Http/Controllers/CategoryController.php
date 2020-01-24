@@ -10,37 +10,21 @@ use Validator;
 class CategoryController extends Controller
 {
 
-	private $prefix = 'categories.'; // Para Rutas
+	private $prefix = 'back.categories.'; // Para Rutas
 	private $viewPrefix = 'backend.categories.'; // Para Vistas
 
 	public function __construct(){
 		$this->middleware('auth');
 	}
 
-	/**
-	* Display a listing of the resource.
-	*
-	* @return \Illuminate\Http\Response
-	*/
 	public function index(){
 		return view($this->viewPrefix.'index', ['categories' => Category::all()]);
 	}
 
-	/**
-	* Show the form for creating a new resource.
-	*
-	* @return \Illuminate\Http\Response
-	*/
 	public function create(){
 		return view($this->viewPrefix.'create');
 	}
 
-	/**
-	* Store a newly created resource in storage.
-	*
-	* @param  \Illuminate\Http\Request  $request
-	* @return \Illuminate\Http\Response
-	*/
 	public function store(Request $request){
 		// dd($request->all());
 		$input = $request->all();
@@ -62,33 +46,14 @@ class CategoryController extends Controller
 		}
 	}
 
-	/**
-	* Display the specified resource.
-	*
-	* @param  \App\Category  $category
-	* @return \Illuminate\Http\Response
-	*/
 	public function show($id){
 		return view($this->viewPrefix.'show', ['c' => Category::find($id)]);
 	}
 
-	/**
-	* Show the form for editing the specified resource.
-	*
-	* @param  \App\Category  $category
-	* @return \Illuminate\Http\Response
-	*/
 	public function edit($id){
 		return view($this->viewPrefix.'edit', ['c' => Category::find($id)]);
 	}
 
-	/**
-	* Update the specified resource in storage.
-	*
-	* @param  \Illuminate\Http\Request  $request
-	* @param  \App\Category  $category
-	* @return \Illuminate\Http\Response
-	*/
 	public function update(Request $request, $id){
 		// dd($request->all());
 		$input = $request->all();
@@ -110,14 +75,14 @@ class CategoryController extends Controller
 		}
 	}
 
-	/**
-	* Remove the specified resource from storage.
-	*
-	* @param  \App\Category  $category
-	* @return \Illuminate\Http\Response
-	*/
 	public function destroy($id){
 		$m = Category::find($id);
+		// dd($a);
+		foreach ($m->posts as $a) {
+			$undefinedCategory = Category::where('slug', 'sin-definir')->first();
+			$a->category_id = $undefinedCategory->id;
+			$a->save();
+		}
 		$m->delete();
 		return redirect()->route($this->prefix.'index');
 	}
