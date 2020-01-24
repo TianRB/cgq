@@ -12,7 +12,6 @@
           <div class="texto-card-articulos">
             <h2>{{ $c->name }}</h2><!-- Título del artículo -->
           </div>
-
           <!-- BOTONES -->
           <div class="btns-notas">
             <form action="{{ route('back.categories.destroy', ['id' => $c->id]) }}" method="POST" class="no-margin">

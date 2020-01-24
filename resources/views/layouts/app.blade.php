@@ -27,9 +27,6 @@
 </head>
 <body>
 
-
-
-
 <!--------------------- ABRE HEADER --------------------->
 <header class="header-principal">
 	<div class="wrapt">
@@ -43,9 +40,9 @@
 			<ul>
 				<li class="btn-cirugia-general">Cirugía general</li>
 				<li class="btn-padecimientos-clinicos">Padecimientos clínicos</li>
-				<li class="pagina-actual"><a href="http://cirujanoveracruz.com">Acerca de mi</a></li>
-				<li><a href="http://cirujanoveracruz.com/blog.html">Blog</a></li>
-				<li><a href="http://cirujanoveracruz.com/contacto.html">Contacto</a></li>
+				<li class="pagina-actual"><a href="{{ url('/') }}">Acerca de mi</a></li>
+				<li><a href="{{ url('/blog') }}"> Blog</a></li>
+				<li><a href="{{ url('/contacto') }}"> Contacto</a></li>
 			</ul>
 		</nav>
 		<div class="contacto-header">
@@ -56,51 +53,45 @@
 		</div>
 		<nav class="submenu submenu-uno">
 			<ul>
-				<div class="back"> < Regresar </div>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/extraccion-lipomas.html">Extracción de lipomas</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/apendicectomia.html">Apendicectomía</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/colecistectomia.html">Colecistectomía</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/exploracion-vias-biliares.html">Exploración de vías biliares</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/resecciones-colonicas.html">Resecciones colónicas</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/reconexiones-intestinales.html">Reconexiones intestinales</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/hernias-abdominales-umbilicales-inguinales.html">Hernias abdominales, umbilicales o inguinales</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/amputaciones.html">Amputaciones</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/trauma-abdominal.html">Trauma abdominal</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/cirugia-antirreflujo.html">Cirugía antirreflujo</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/cirugia-acalasia.html">Cirugía de acalasia</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/extraccion-bazo.html">Extracción de bazo</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/cirugia-glandula-tiroides.html">Cirugía de glándula tiroides</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/pie-diabetico.html">Pie diabéticos</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/heridas-cronicas.html">Heridas crónicas</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/padecimientos-anorrectales.html">Padecimientos anorrectales</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/deteccion-oportuna-cancer-tubo-digestivo.html">Detección oportuna de cáncer de tubo digestivo</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/tratamiento-ulceras-por-decubito.html">Tratamiento de úlceras por decúbito</a></li>
-				<li><a href="http://cirujanoveracruz.com/cirugia-general/drenaje-tratamiento-infecciones-abscesos-tejidos-blandos.html">Drenaje y tratamiento de infecciones y abscesos en tejidos blandos</a></a></li>
+				<div class="back"> Regresar </div>
+				<li><a href="{{ url('/cirugia-general/extraccion-lipomas') }}"> Extracción de lipomas</a></li>
+				<li><a href="{{ url('/cirugia-general/apendicectomia') }}"> Apendicectomía</a></li>
+				<li><a href="{{ url('/cirugia-general/colecistectomia') }}"> Colecistectomía</a></li>
+				<li><a href="{{ url('/cirugia-general/exploracion-vias-biliares') }}"> Exploración de vías biliares</a></li>
+				<li><a href="{{ url('/cirugia-general/resecciones-colonicas') }}"> Resecciones colónicas</a></li>
+				<li><a href="{{ url('/cirugia-general/reconexiones-intestinales') }}"> Reconexiones intestinales</a></li>
+				<li><a href="{{ url('/cirugia-general/hernias-abdominales') }}"> Hernias abdominales, umbilicales o inguinales</a></li>
+				<li><a href="{{ url('/cirugia-general/amputaciones') }}"> Amputaciones</a></li>
+				<li><a href="{{ url('/cirugia-general/trauma-abdominal') }}"> Trauma abdominal</a></li>
+				<li><a href="{{ url('/cirugia-general/cirugia-antirreflujo') }}"> Cirugía antirreflujo</a></li>
+				<li><a href="{{ url('/cirugia-general/cirugia-acalasia') }}"> Cirugía de acalasia</a></li>
+				<li><a href="{{ url('/cirugia-general/extraccion-bazo') }}"> Extracción de bazo</a></li>
+				<li><a href="{{ url('/cirugia-general/cirugia-glandula-tiroides') }}"> Cirugía de glándula tiroides</a></li>
+				<li><a href="{{ url('/cirugia-general/pie-diabetico') }}"> Pie diabéticos</a></li>
+				<li><a href="{{ url('/cirugia-general/heridas-cronicas') }}"> Heridas crónicas</a></li>
+				<li><a href="{{ url('/cirugia-general/padecimientos-anorrectales') }}"> Padecimientos anorrectales</a></li>
+				<li><a href="{{ url('/cirugia-general/deteccion-oportuna') }}"> Detección oportuna de cáncer de tubo digestivo</a></li>
+				<li><a href="{{ url('/cirugia-general/tratamiento-ulceras') }}"> Tratamiento de úlceras por decúbito</a></li>
+				<li><a href="{{ url('/cirugia-general/drenaje-tratamiento-infecciones') }}"> Drenaje y tratamiento de infecciones y abscesos en tejidos blandos</a></a></li>
 			</ul>
 		</nav>
 		<nav class="submenu submenu-dos">
 			<ul>
 				<div class="back"> < Regresar </div>
-				<li><a href="http://cirujanoveracruz.com/padecimientos-clinicos/enfermedades-esofagicas.html">Enfermedades esofágicas</a></li>
-				<li><a href="http://cirujanoveracruz.com/padecimientos-clinicos/enfermedades-gastricas.html">Enfermedades gástricas</a></li>
-				<li><a href="http://cirujanoveracruz.com/padecimientos-clinicos/enfermedades-intestino-delgado.html">Enfermedades del intestino delgado</a></li>
-				<li><a href="http://cirujanoveracruz.com/padecimientos-clinicos/enfermedades-colonicas.html">Enfermedades colónicas</a></li>
-				<li><a href="http://cirujanoveracruz.com/padecimientos-clinicos/enfermedades-higado.html">Enfermedades del hígado</a></li>
-				<li><a href="http://cirujanoveracruz.com/padecimientos-clinicos/enfermedades-vesicula-vias-biliares.html">Enfermedades de la vesícula y vías biliares</a></li>
-				<li><a href="http://cirujanoveracruz.com/padecimientos-clinicos/enfermedades-pancreaticas.html">Enfermedades pancreáticas</a></li>
-				<li><a href="http://cirujanoveracruz.com/padecimientos-clinicos/enfermedades-bazo.html">Enfermedades del bazo</a></li>
+				<li><a href="{{ url('/padecimientos-clinicos/enfermedades-esofagicas') }}"> Enfermedades esofágicas</a></li>
+				<li><a href="{{ url('/padecimientos-clinicos/enfermedades-gastricas') }}"> Enfermedades gástricas</a></li>
+				<li><a href="{{ url('/padecimientos-clinicos/enfermedades-intestino-delgado') }}"> Enfermedades del intestino delgado</a></li>
+				<li><a href="{{ url('/padecimientos-clinicos/enfermedades-colonicas') }}"> Enfermedades colónicas</a></li>
+				<li><a href="{{ url('/padecimientos-clinicos/enfermedades-higado') }}"> Enfermedades del hígado</a></li>
+				<li><a href="{{ url('/padecimientos-clinicos/enfermedades-vesicula-vias-biliares') }}"> Enfermedades de la vesícula y vías biliares</a></li>
+				<li><a href="{{ url('/padecimientos-clinicos/enfermedades-pancreaticas') }}"> Enfermedades pancreáticas</a></li>
+				<li><a href="{{ url('/padecimientos-clinicos/enfermedades-bazo') }}"> Enfermedades del bazo</a></li>
+				<li><a href="{{ url('/padecimientos-clinicos/enfermedades-intestino-irritable') }}"> Enfermedades del intestino irritable</a></li>
 			</ul>
 		</nav>
 	</div>
 </header>
 <!--------------------- CIERRA HEADER --------------------->
-
-
-
-
-
-
-
 
 <!--------------------- ABRE CONTENEDOR GENERAL --------------------->
 <main class="main-index main-general">
