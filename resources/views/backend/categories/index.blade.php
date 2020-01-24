@@ -14,6 +14,7 @@
           </div>
           <!-- BOTONES -->
           <div class="btns-notas">
+            @if($c->slug !== 'sin-definir')
             <form action="{{ route('back.categories.destroy', ['id' => $c->id]) }}" method="POST" class="no-margin">
               {{ csrf_field() }}
               <input type="hidden" name="_method" value="DELETE" />
@@ -24,6 +25,7 @@
                 <span class="icon-borrar"></span>
               </button>
             </form>
+            @endif
           </div>
         </section>
       </article>

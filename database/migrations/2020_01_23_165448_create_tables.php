@@ -20,8 +20,12 @@ class CreateTables extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->unique();
+            $table->string('image');
+            $table->string('video')->nullable();
             $table->string('content', 2048);
             $table->string('slug')->unique();
+            $table->string('meta_descr');
+            $table->string('page_title');
 			$table->integer('category_id')->unsigned()->nullable();
 			$table->foreign('category_id')->references('id')->on('categorias')->onDelete('cascade');
             $table->timestamps();

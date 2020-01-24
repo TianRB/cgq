@@ -8,45 +8,40 @@
       <div class="header-gris">
         <h3>Artículo</h3>
       </div>
-      <form action="" class="formulario-articulo">
-        <!--<div class="group">      
-	    						<input type="text" required>
-	    						<span class="highlight"></span>
-	    						<span class="bar"></span>
-	    						<label>URL del Video</label>
-	  						</div>-->
+      <form enctype="multipart/form-data" action="{{ route('back.posts.store') }}" method="POST">
+        {{ csrf_field() }}
+
         <div class="group">
-          <input type="text" required>
+          <input type="text" value="{{ old('title') }}" required name="title">
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Título de la nota</label>
         </div>
 
         <div class="group">
-          <input type="text" required>
+          <input type="text" value="{{ old('video') }}" name="video">
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Vídeo (opcional)</label>
         </div>
 
-        <textarea>Easy (and free!) You should check out our premium features.</textarea>
+        <textarea class="ckeditor" id="ckeditor" name="content" required>{!! old('content') !!}</textarea>
 
         <div class="etiquetas-seo">
           <h5>Etiquetas SEO</h5>
           <div class="group">
-            <input type="text" required>
+            <input type="text" value="{{ old('page_title') }}" required name="page_title">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Etiqueta Title</label>
           </div>
           <div class="group">
-            <input type="text" required>
+            <input type="text" value="{{ old('meta_descr') }}" required name="meta_descr">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Etiqueta Meta Description</label>
           </div>
         </div>
-      </form>
     </div>
   </div> <!-- Esta etiqueta cierra toda la columna izquierda, la cual contiene el área para crear la nota -->
 
@@ -59,67 +54,15 @@
       </div>
       <!-- ******************************** CHECKBOX ******************************** -->
 
-      <div class="checkbox-container">
+      <div class="radio-container">
+        @foreach($categories as $c)
         <div class="check-awesome" class="form-group">
-          <input type="checkbox" class="checkbox" checked>
-          <label for="check-me">
-            Esófago
+          <input type="radio" name="category" class="radio" value="{{ $c->id }}" checked>
+          <label for="category">
+            {{ $c->name }}
           </label>
         </div>
-        <div class="check-awesome" class="form-group">
-          <input type="checkbox" class="checkbox">
-          <label for="check-me">
-            Colon
-          </label>
-        </div>
-        <div class="check-awesome" class="form-group">
-          <input type="checkbox" class="checkbox">
-          <label for="check-me">
-            Intestino Delgado
-          </label>
-        </div>
-        <div class="check-awesome" class="form-group">
-          <input type="checkbox" class="checkbox">
-          <label for="check-me">
-            Apéndice
-          </label>
-        </div>
-        <div class="check-awesome" class="form-group">
-          <input type="checkbox" class="checkbox">
-          <label for="check-me">
-            Bazo
-          </label>
-        </div>
-        <div class="check-awesome" class="form-group">
-          <input type="checkbox" class="checkbox">
-          <label for="check-me">
-            Páncreas
-          </label>
-        </div>
-        <div class="check-awesome" class="form-group">
-          <input type="checkbox" class="checkbox">
-          <label for="check-me">
-            Riñones
-          </label>
-        </div>
-        <div class="check-awesome" class="form-group">
-          <input type="checkbox" class="checkbox">
-          <label for="check-me">
-            Vesícula
-          </label>
-        </div>
-        <div class="check-awesome" class="form-group">
-          <input type="checkbox" class="checkbox">
-          <label for="check-me">
-            Tiroides
-          </label>
-        </div>
-        <div class="check-awesome" class="form-group">
-          <input type="checkbox" class="checkbox">
-          <label for="check-me">
-            Ano
-          </label>
-        </div>
+        @endforeach
       </div>
 
       <!-- ******************************** SUBIR FOTO ******************************** -->
@@ -127,9 +70,7 @@
       <h5>FOTO:</h5>
       <section class="contenedor-create foto-articulo contenedor-crear-foto-dos">
         <div class="subir-foto-articulo">
-          <form action="process-form.php">
-            <input name="input-file-2" id="input-file-2">
-          </form>
+          <input name="image" id="input-file-2" type="file">
         </div>
       </section>
 
@@ -138,7 +79,7 @@
       <!-- ******************************** BOTONES ******************************** -->
 
       <div class="btns-create-article">
-        <button class="btn btn-rectangle btn-raised">
+        <button class="btn btn-rectangle btn-raised" type="submit">
           <div class="ripple-container">
             <span class="ripple-effect"></span>
           </div>
@@ -153,6 +94,7 @@
 
       </div>
     </div>
+    </form>
 
     <!-- ******************************** INFORMACIÓN DE LA PUBLICACIÓN ******************************** -->
 
@@ -169,4 +111,14 @@
 					</div> -->
   </div><!-- Esta etiqueta cierra toda la columna derecha -->
 </div>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script type="text/javascript">
+CKEDITOR.replace('ckeditor');
+
+@if($errors -> any())
+@foreach($errors -> all() as $error)
+console.log('{!! $error !!}');
+@endforeach
+@endif
+</script>
 @endsection
