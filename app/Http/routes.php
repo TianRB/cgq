@@ -41,7 +41,7 @@ Route::get('/cirugia-general/colecistectomia', 'FrontController@colecistectomia'
 Route::get('/cirugia-general/deteccion-oportuna', 'FrontController@deteccion_oportuna');
 Route::get('/cirugia-general/drenaje-tratamiento-infecciones', 'FrontController@drenaje_tratamiento_infecciones');
 Route::get('/cirugia-general/exploracion-vias-biliares', 'FrontController@exploracion_vias_biliares');
-Route::get('/cirugia-general/cirujia-anti-reflujo', 'FrontController@cirujia_anti_reflujo');
+Route::get('/cirugia-general/cirujia-antirreflujo', 'FrontController@cirujia_antirreflujo');
 Route::get('/cirugia-general/extraccion-bazo', 'FrontController@extraccion_bazo');
 Route::get('/cirugia-general/extraccion-lipomas', 'FrontController@extraccion_lipomas');
 Route::get('/cirugia-general/heridas-cronicas', 'FrontController@heridas_cronicas');
