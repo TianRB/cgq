@@ -26,6 +26,7 @@ Route::get('/padecimientos-clinicos/enfermedades-bazo', 'FrontController@enferme
 Route::get('/padecimientos-clinicos/enfermedades-colonicas', 'FrontController@enfermedades_colonicas');
 Route::get('/padecimientos-clinicos/enfermedades-esofagicas', 'FrontController@enfermedades_esofagicas');
 Route::get('/padecimientos-clinicos/enfermedades-gastricas', 'FrontController@enfermedades_gastricas');
+Route::get('/padecimientos-clinicos/enfermedades-gastricas', 'FrontController@enfermedades_gastricas');
 Route::get('/padecimientos-clinicos/enfermedades-higado', 'FrontController@enfermedades_higado');
 Route::get('/padecimientos-clinicos/enfermedades-intestino-delgado', 'FrontController@enfermedades_intestino_delgado');
 Route::get('/padecimientos-clinicos/enfermedades-pancreaticas', 'FrontController@enfermedades_pancreaticas');
@@ -40,6 +41,7 @@ Route::get('/cirugia-general/colecistectomia', 'FrontController@colecistectomia'
 Route::get('/cirugia-general/deteccion-oportuna', 'FrontController@deteccion_oportuna');
 Route::get('/cirugia-general/drenaje-tratamiento-infecciones', 'FrontController@drenaje_tratamiento_infecciones');
 Route::get('/cirugia-general/exploracion-vias-biliares', 'FrontController@exploracion_vias_biliares');
+Route::get('/cirugia-general/cirujia-anti-reflujo', 'FrontController@cirujia_anti_reflujo');
 Route::get('/cirugia-general/extraccion-bazo', 'FrontController@extraccion_bazo');
 Route::get('/cirugia-general/extraccion-lipomas', 'FrontController@extraccion_lipomas');
 Route::get('/cirugia-general/heridas-cronicas', 'FrontController@heridas_cronicas');
