@@ -41,7 +41,7 @@ Route::get('/cirugia-general/colecistectomia', 'FrontController@colecistectomia'
 Route::get('/cirugia-general/deteccion-oportuna', 'FrontController@deteccion_oportuna');
 Route::get('/cirugia-general/drenaje-tratamiento-infecciones', 'FrontController@drenaje_tratamiento_infecciones');
 Route::get('/cirugia-general/exploracion-vias-biliares', 'FrontController@exploracion_vias_biliares');
-Route::get('/cirugia-general/cirujia-antirreflujo', 'FrontController@cirujia_antirreflujo');
+Route::get('/cirugia-general/cirugia-antirreflujo', 'FrontController@cirugia_antirreflujo');
 Route::get('/cirugia-general/extraccion-bazo', 'FrontController@extraccion_bazo');
 Route::get('/cirugia-general/extraccion-lipomas', 'FrontController@extraccion_lipomas');
 Route::get('/cirugia-general/heridas-cronicas', 'FrontController@heridas_cronicas');
@@ -54,10 +54,6 @@ Route::get('/cirugia-general/tratamiento-ulceras', 'FrontController@tratamiento_
 Route::get('/cirugia-general/trauma-abdominal', 'FrontController@trauma_abdominal');
 
 //BACKEND
-
-Route::get('/home', function () {
-    return view('backend.posts.index');
-})->middleware(Authenticate::class);
-
+Route::get('/home', 'PostController@index')->middleware(Authenticate::class); // Redirección inicial
 Route::resource('/back/categories', 'CategoryController');
 Route::resource('/back/posts', 'PostController');
