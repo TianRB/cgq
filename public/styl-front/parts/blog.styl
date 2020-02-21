@@ -1,0 +1,140 @@
+.contenedor-blog
+	//background #f0f3f5
+	width 100%
+	padding-top 50px
+.blog
+	width 95%
+	margin 0 auto 
+	font-size 0
+	//background #f0f3f5
+	.grid-item 
+		width 100%
+		margin-bottom 30px
+		section 
+			width 90%
+			background #fff 
+			padding-bottom 20px
+			border-radius 5px 
+			overflow hidden
+			margin 0 auto
+			box-shadow 1px 1px 5px 1px rgba(0, 0, 0, .35)
+			transition all .5s
+			a 
+				text-decoration none
+		figure 
+			width 100%
+			margin 0 auto 
+			padding 0 auto
+			overflow hidden
+			margin-bottom 20px
+			img 
+				width 100%
+				height auto 
+		div 
+			width 90%
+			margin 0 auto 
+		.btn 
+			width 100px 
+			height 40px 
+			line-height 40px 
+			background rojo-cgq
+			color #fff	
+			margin-left 0
+			font-size 1rem
+			text-align center
+			margin-top 10px
+		h2,p
+			width 100%
+			margin 0 auto
+			color #4d4d4d
+		h2 
+			font-size 1.2rem
+			line-height 1.5rem
+			margin-bottom 15px
+			text-transform uppercase
+		p 
+			font-size .8rem !important
+			line-height 1.2rem
+			font-weight 300
+	.grid-item--width2 
+		width: 400px
+.categorias
+	width 95%
+	margin 0 auto
+	h3
+		font-size 1rem
+		color azul-cgq
+		text-transform uppercase
+	.buscador input 
+		width 200px 
+		height 40px 
+		line-height 40px 
+		border-radius 20px
+		border 1px solid azul-cgq
+		margin-bottom 20px
+		padding-left 20px
+	ul 
+		margin-top 10px
+		width 100%
+		li 
+			a 
+				font-size 1rem
+				text-decoration none
+				padding 10px 0px
+				width 100%
+				display block
+				color gris-texto
+				border-bottom 1px solid gris-clarito 
+				&:hover
+					color rojo-cgq
+		
+		
+@media screen and (min-width: 1000px)
+	.contenedor-blog
+		width 90%
+		margin 0 auto
+		font-size 0
+	.categorias
+		width 20%
+		display inline-block
+		vertical-align top
+		nav
+			width 80%
+			margin 0 auto
+			li 
+				list-style none
+				a 
+					font-size 1rem
+	.blog 
+		width 80%
+		display inline-block
+		vertical-align top
+		.grid-item 
+			cursor pointer
+			width 47.5%
+			display inline-flex !important
+			vertical-align top !important
+			&:hover
+				section 
+					box-shadow 2px 2px 5px 4px rgba(0, 0, 0, .35)
+					position relative
+					div
+						&::after
+							content ''
+							background url("../img/rayitas.svg")
+							background-size cover
+							width 83px
+							height 80px
+							position absolute
+							top -20px 
+							right -40px
+						&::before
+							content ''
+							background url("../img/rayita-abajo.svg")
+							background-size cover
+							width 83px
+							height 80px
+							position absolute
+							bottom -40px 
+							left -40px
+			
