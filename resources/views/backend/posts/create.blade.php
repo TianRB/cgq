@@ -1,7 +1,7 @@
 @extends('layouts.back')
 @section('content')
 <!-- ******************************** ÁREA PARA CREAR LA NOTA ******************************** -->
-<div class="contenedor-secundario">
+<div class="contenedor-secundario contenedor-crear-nota">
   <!-- Este contenedor tiene tanto el aside derecho como el área para crear la nota -->
   <div class="div-izquierdo">
     <div class="modulo-medio sombra-1">
@@ -54,10 +54,11 @@
       </div>
       <!-- ******************************** CHECKBOX ******************************** -->
 
-      <div class="radio-container">
+      <div class="radio-container checkbox-container">
+
         @foreach($categories as $c)
         <div class="check-awesome" class="form-group">
-          <input type="radio" name="category" class="radio" value="{{ $c->id }}" checked>
+          <input type="checkbox" name="category" class="checkbox" value="{{ $c->id }}">
           <label for="category">
             {{ $c->name }}
           </label>

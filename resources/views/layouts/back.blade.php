@@ -19,9 +19,9 @@
 			<div class="contenedor-inicio-sesion">
 				<div class="fecha"></div>
 				<div class="avatar">
-					<div class="usuario-avatar">Ana Karen García</div>
+					<div class="usuario-avatar">Dr. José Manuel Luna</div>
 					<figure>
-						<img src="{{ asset('img/person-7.jpg') }}" alt="">
+						<img src="{{ asset('img/avatar-luna.jpg') }}" alt="">
 					</figure>
 				</div>
 			</div>
