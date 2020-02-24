@@ -5,14 +5,14 @@
 
 <div class="contenedor-blog">
 	<div class="blog grid">
-    
+
       @foreach($posts as $p)
 			<article class="grid-item">
 				<section>
-					<figure><img src="{{ asset('img/gastritis.jpg') }}" alt=""></figure>
+					<figure><img src="{{ asset($p->image) }}" alt=""></figure>
 						<div>
 							<h2>{{ $p->title }}</h2>
-							<p>{!! str_limit($p->content, $limit=10, $end='...') !!}</p>
+							<p>{!! str_limit($p->content, $limit=100, $end='...') !!}</p>
 							<a href="{{ url('/nota/'.$p->title) }}"><div class="btn">Ver más</div></a>
 						</div>
 				</section>
@@ -28,7 +28,9 @@
 			<h3>Categorías</h3>
 			<ul>
         @foreach($categories as $c)
-        <li><a href="{{ url('/blog/'.$c->slug) }}">{{ $c->name }}</a></li>
+            @if($c->slug !== 'sin-definir')
+                <li><a href="{{ url('/blog/'.$c->slug) }}">{{ $c->name }}</a></li>
+            @endif
         @endforeach
 			</ul>
 		</nav>

@@ -4,7 +4,11 @@
 
 <div class="nota">
   <article class="articulo-nota">
-    <figure><img src="{{ asset($post->image) }}" alt="{{ $post->slug }}"></figure>
+      @if($post->video !== '')
+        <iframe width="560" height="315" src="{{ $post->video }}" allowfullscreen></iframe>
+      @else
+          <figure><img src="{{ asset($post->image) }}" alt="{{ $post->slug }}"></figure>
+      @endif
     <section>
       {!! $post->content !!}
     </section>
