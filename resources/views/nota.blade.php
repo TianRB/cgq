@@ -5,7 +5,9 @@
 <div class="nota">
   <article class="articulo-nota">
       @if($post->video !== '')
-        <iframe width="560" height="315" src="{{ $post->video }}" allowfullscreen></iframe>
+        <div class="contenedor-video">
+          <iframe src="{{ $post->video }}" allowfullscreen></iframe>
+        </div>
       @else
           <figure><img src="{{ asset($post->image) }}" alt="{{ $post->slug }}"></figure>
       @endif
