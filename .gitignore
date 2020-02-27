@@ -1,6 +1,7 @@
 /vendor
 /node_modules
 /CGQprogramacion
+/public/img/article_pictures
 Homestead.yaml
 Homestead.json
 .env
