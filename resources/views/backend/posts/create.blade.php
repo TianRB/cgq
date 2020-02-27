@@ -7,7 +7,7 @@
     <div class="modulo-medio sombra-1">
       <div class="header-gris">
         <h3>Artículo</h3>
-      </div>
+      </div> 
       <form enctype="multipart/form-data" action="{{ route('back.posts.store') }}" method="POST">
         {{ csrf_field() }}
 
