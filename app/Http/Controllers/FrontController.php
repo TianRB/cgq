@@ -32,9 +32,9 @@ class FrontController extends Controller
         ]);
     }
 
-    public function nota($title) {
+    public function nota($slug) {
         return view('nota', [
-            'post' => Post::where('title', $title)->first(),
+            'post' => Post::where('slug', $slug)->first(),
             'related' => Post::all()->shuffle()->take(3)
         ]);
     }
