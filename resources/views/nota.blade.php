@@ -25,7 +25,7 @@
       <article>
         <figure><img src="{{ asset($p->image) }}" alt="{{ $p->slug }}"></figure>
         <h4>{{ $p->title }}</h4>
-        {!! $p->content !!}
+        {!! str_limit($p->content, $limit=100, $end='...') !!}
       </article>
     </a>
     @endforeach
