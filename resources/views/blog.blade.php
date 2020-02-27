@@ -13,7 +13,7 @@
 						<div>
 							<h2>{{ $p->title }}</h2>
 							<p>{!! str_limit($p->content, $limit=100, $end='...') !!}</p>
-							<a href="{{ url('/nota/'.$p->slug) }}"><div class="btn">Ver más</div></a>
+							<a href="{{ url('/nota/'.$p->title) }}"><div class="btn">Ver más</div></a>
 						</div>
 				</section>
 			</article>
